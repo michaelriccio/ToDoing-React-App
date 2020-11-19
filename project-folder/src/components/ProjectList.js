@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskList = ({curTask}) => {
+const ProjectList = (props) => {
     return <div>
         <div>{curTask.task}</div>
         <input type="checkbox"/>
@@ -8,4 +8,4 @@ const TaskList = ({curTask}) => {
     </div>
 }
 
-export default TaskList;
+export default ProjectList;
