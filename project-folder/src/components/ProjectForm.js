@@ -1,34 +1,27 @@
-import React from 'react';
+import React,{useState} from 'react';
+import uuid from 'uuid';
 
-const ProjectForm = ({addTodo, curProject}) => {
+const ProjectForm = ({addProj, curProject}) => {
 
-    const [todo, setTodo] = useState({
+    const [proj, setProj] = useState({
         id: "",
-        task: "",
         project: "",
         completed: false
     });
 
+    //Changes proj state on input change
     const handleTaskInputChange = (e) => {
-        setTodo({...todo, task: e.target.value});
-        console.log({todo});
+        setProj({...proj, project: e.target.value});
     }
 
+    //Submits project list change
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(todo.task.trim()) {
-            addTodo({...todo, id: uuid.v4()});
-            setTodo({ ...todo, task: "", project: "inbox"}); //Reset task
+        if(proj.project.trim()) {
+            addProj({...proj, id: uuid.v4()});
+            setProj({ ...proj, project: ""}); //Reset textbox
         };
     }
-
-    const handleSelect = (e) => {
-        e.preventDefault();
-        setTodo({...todo, project: e.target.value});
-    }
-
-    let projectList = curProject.map((projects) => <option value={projects} key={projects.id}>{projects.text}</option>
-    );
 
     return (
         <div>
@@ -36,16 +29,13 @@ const ProjectForm = ({addTodo, curProject}) => {
                 <input 
                 name="task"
                 type="text"
-                value={todo.task}
+                value={proj.project}
                 onChange={handleTaskInputChange}
                 className="taskInput" 
                 placeholder="Enter task here"
                 />
-                <select onSelect={handleSelect} placeholder="project?">
-                    {projectList}
-                </select>
                 <button type="submit" className="taskButton">
-                    <i className="far fa-plus-square"/>
+                +
                 </button>
             </form>
         </div>

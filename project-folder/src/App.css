@@ -81,4 +81,16 @@ footer {
   width: 100%;
   z-index: 9999;
 }
+
+.clearing {
+  position: fixed;
+  z-index: 9999;
+}
+
+.listItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem;
+}
 /*# sourceMappingURL=App.css.map */

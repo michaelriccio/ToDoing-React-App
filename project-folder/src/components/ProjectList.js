@@ -1,9 +1,8 @@
 import React from 'react';
 
-const ProjectList = (props) => {
-    return <div>
-        <div>{curTask.task}</div>
-        <input type="checkbox"/>
+const ProjectList = ({key, curProject, nowFolder}) => {
+    return <div className="listItem">
+        <div onClick={nowFolder}>{curProject.project}</div>
         <button type="button">X</button>
     </div>
 }

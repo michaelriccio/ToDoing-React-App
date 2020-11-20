@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TaskList = ({curTask}) => {
-    return <div>
+    return <div className="listItem">
         <div>{curTask.task}</div>
         <input type="checkbox"/>
         <button type="button">X</button>

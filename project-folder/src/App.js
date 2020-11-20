@@ -7,8 +7,16 @@ const LOCAL_STORAGE_TASKS = "todoing-tasks";
 const LOCAL_STORAGE_PROJECTS = "todoing-projects";
 
 const App = () => {
-  const [curFolder, setFolder] = useState([{text: "inbox", id: "a1"}]);
-  const [curProject, setProject] = useState([{text: "inbox", id: "b1"}]);
+
+  const clearing = () => {
+    localStorage.setItem(LOCAL_STORAGE_TASKS, []);
+    localStorage.setItem(LOCAL_STORAGE_PROJECTS, []);
+    console.log('clearing');
+  }
+
+
+  const [curFolder, setFolder] = useState("inbox");
+  const [curProject, setProject] = useState([{id: "b1", project: "inbox", completed: false }]);
   const [curTask, setTask] = useState([]);
 
   //Retrieves tasks from local storage when the page loads
@@ -37,13 +45,22 @@ const App = () => {
 
   const addTodo = (todo) => {
     setTask([todo, ...curTask]);
-  }
+  };
+
+  const addProj = (proj) => {
+    setProject([...curProject, proj ])
+  };
+
+  const nowFolder = (curProject) => {
+    setFolder(curProject.project);
+  } 
 
   return (
     <div className="App">
       <header className="bigtext">ToDoing by Michael Riccio</header>
+      <button className="clearing" onClick={clearing} type='button'>X</button>
       <div className="center">
-        <Projects/>
+        <Projects addProj={addProj} curProject={curProject} nowFolder={nowFolder} />
         <Todo addTodo={addTodo}  curTask={curTask} curProject={curProject} curFolder={curFolder}/>
       </div>
       <footer className="bigtext">Made with HTML/CSS/JS/REACT</footer>
