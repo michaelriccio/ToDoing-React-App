@@ -6,7 +6,7 @@ const TodoForm = ({addTodo, curProject}) => {
     const [todo, setTodo] = useState({
         id: "",
         task: "",
-        project: "",
+        project: "inbox",
         completed: false
     });
 
@@ -23,14 +23,11 @@ const TodoForm = ({addTodo, curProject}) => {
     }
 
     const handleSelect = (e) => {
-        e.preventDefault();
-        console.log(e.target.value)
         setTodo({...todo, project: e.target.value});
     }
 
-    let projectList = curProject.map((item) => <option onChange={handleSelect} value={item.project} key={item.id}>{item.project}</option>
+    let projectList = curProject.map((item) => <option key={item.id}>{item.project}</option>
     );
-    console.log(projectList);
 
     return (
         <div>
@@ -43,7 +40,7 @@ const TodoForm = ({addTodo, curProject}) => {
                 className="taskInput" 
                 placeholder="Enter task here"
                 />
-                <select>
+                <select onChange={handleSelect}>
                     {projectList}
                 </select>
                 <button type="submit" className="taskButton">+</button>

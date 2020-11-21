@@ -15,7 +15,7 @@ const App = () => {
   }
 
 
-  const [curFolder, setFolder] = useState("inbox");
+  const [curFolder, setFolder] = useState(["inbox"]);
   const [curProject, setProject] = useState([{id: "b1", project: "inbox", completed: false }]);
   const [curTask, setTask] = useState([]);
 
@@ -51,9 +51,24 @@ const App = () => {
     setProject([...curProject, proj ])
   };
 
-  const nowFolder = (curProject) => {
-    setFolder(curProject.project);
+  const nowFolder = (projectValue) => {
+    setFolder(projectValue);
   } 
+
+  const toggleComplete = (id) => {
+    setTask(
+      curTask.map(item => {
+        if(item.id === id) {
+          return {...item, completed: !item.completed};
+        }
+        return item;
+      })
+    )
+  }
+
+  const removeTodo = (id) => {
+    setTask(curTask.filter(item => item.id !== id));
+  }
 
   return (
     <div className="App">
@@ -61,7 +76,7 @@ const App = () => {
       <button className="clearing" onClick={clearing} type='button'>X</button>
       <div className="center">
         <Projects addProj={addProj} curProject={curProject} nowFolder={nowFolder} />
-        <Todo addTodo={addTodo}  curTask={curTask} curProject={curProject} curFolder={curFolder}/>
+        <Todo addTodo={addTodo}  curTask={curTask} curProject={curProject} curFolder={curFolder} toggleComplete={toggleComplete} removeTodo={removeTodo}/>
       </div>
       <footer className="bigtext">Made with HTML/CSS/JS/REACT</footer>
     </div>

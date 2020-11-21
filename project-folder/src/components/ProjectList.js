@@ -1,9 +1,14 @@
 import React from 'react';
 
-const ProjectList = ({key, curProject, nowFolder}) => {
+const ProjectList = ({curProject, nowFolder}) => {
+
+    const handleClick = (e) => {
+        nowFolder(e.target.innerText);
+    }
+
     return <div className="listItem">
-        <div onClick={nowFolder}>{curProject.project}</div>
-        <button type="button">X</button>
+        <div onClick={handleClick} > {curProject.project} </div>
+        <button type="button"> X </button>
     </div>
 }
 
