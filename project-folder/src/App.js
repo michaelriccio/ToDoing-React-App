@@ -16,7 +16,7 @@ const App = () => {
 
 
   const [curFolder, setFolder] = useState(["inbox"]);
-  const [curProject, setProject] = useState([{id: "b1", project: "inbox", completed: false }]);
+  const [curProject, setProject] = useState([{id: "b1", project: "inbox", completable: false }]);
   const [curTask, setTask] = useState([]);
 
   //Retrieves tasks from local storage when the page loads
@@ -70,12 +70,19 @@ const App = () => {
     setTask(curTask.filter(item => item.id !== id));
   }
 
+  const removeProject = (tempProj) => {
+    if (window.confirm('Deleting a project deletes all tasks sorted beneath it. Are you sure you want to delete?')) {
+      setProject(curProject.filter(item => item.id !== tempProj.id));
+      setTask(curTask.filter(item => item.project !== tempProj.project));
+    }
+  }
+
   return (
     <div className="App">
       <header className="bigtext">ToDoing by Michael Riccio</header>
       <button className="clearing" onClick={clearing} type='button'>X</button>
       <div className="center">
-        <Projects addProj={addProj} curProject={curProject} nowFolder={nowFolder} />
+        <Projects addProj={addProj} curProject={curProject} setProject={setProject} nowFolder={nowFolder} removeProject={removeProject} />
         <Todo addTodo={addTodo}  curTask={curTask} curProject={curProject} curFolder={curFolder} toggleComplete={toggleComplete} removeTodo={removeTodo}/>
       </div>
       <footer className="bigtext">Made with HTML/CSS/JS/REACT</footer>

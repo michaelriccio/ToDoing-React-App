@@ -6,7 +6,7 @@ const ProjectForm = ({addProj, curProject}) => {
     const [proj, setProj] = useState({
         id: "",
         project: "",
-        completed: false
+        completable: true
     });
 
     //Changes proj state on input change
