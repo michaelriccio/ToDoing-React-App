@@ -80,7 +80,7 @@ const App = () => {
       </div>
       <footer className="bigtext">Made with HTML/CSS/JS/REACT</footer>
     </div>
-  );
+  )
 }
 
 export default App;

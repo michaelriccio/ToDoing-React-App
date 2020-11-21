@@ -2,15 +2,17 @@ import React from 'react';
 
 const TaskList = ({curTask, toggleComplete, removeTodo}) => {
 
-    const handleCheckbox = () => toggleComplete(curTask, toggleComplete);
+    const handleCheckbox = () => toggleComplete(curTask.id);
 
     const handleDelete = () => removeTodo(curTask.id);
 
-    return <div className="listItem">
+    return (
+    <div className="listItem">
         <div style={{textDecoration: curTask.completed ? "line-through" : null}}> {curTask.task}</div>
-        <input onClick={handleCheckbox} type="checkbox"/>
-        <button onclick={handleDelete} type="button">X</button>
+        <button onClick={handleCheckbox} type="checkbox">√</button>
+        <button onClick={handleDelete} type="button">X</button>
     </div>
+    )
 }
 
 export default TaskList;
