@@ -5,18 +5,20 @@ import Todo from './components/Todo';
 
 const LOCAL_STORAGE_TASKS = "todoing-tasks";
 const LOCAL_STORAGE_PROJECTS = "todoing-projects";
+const initFolder = ["inbox"];
+const initProjects = [{ id: "b1", project: "inbox", completable: false }];
 
 const App = () => {
 
   const clearing = () => {
-    localStorage.setItem(LOCAL_STORAGE_TASKS, []);
-    localStorage.setItem(LOCAL_STORAGE_PROJECTS, []);
+    localStorage.setItem(LOCAL_STORAGE_TASKS, JSON.stringify([]));
+    localStorage.setItem(LOCAL_STORAGE_PROJECTS, JSON.stringify(initProjects));
     console.log('clearing');
   }
 
 
-  const [curFolder, setFolder] = useState(["inbox"]);
-  const [curProject, setProject] = useState([{id: "b1", project: "inbox", completable: false }]);
+  const [curFolder, setFolder] = useState(initFolder);
+  const [curProject, setProject] = useState(initProjects);
   const [curTask, setTask] = useState([]);
 
   //Retrieves tasks from local storage when the page loads
@@ -25,11 +27,16 @@ const App = () => {
     if(storageTasks){
       setTask(storageTasks); //Will set tasks if storageTasks isn't null
     }
+    
   }, [])
   //Saves tasks to local storage any time curTask changes
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_TASKS, JSON.stringify(curTask));
   }, [curTask]);
+
+  function lsSetItem(name, data) { 
+    localStorage.setItem(name, JSON.stringify(data));
+  }
 
   //Retrieves projects from local storage on load
   useEffect(() => {

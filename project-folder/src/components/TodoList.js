@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskList = ({curTask, toggleComplete, removeTodo}) => {
+const TodoList = ({curTask, toggleComplete, removeTodo}) => {
 
     const handleCheckbox = () => toggleComplete(curTask.id);
 
@@ -15,4 +15,4 @@ const TaskList = ({curTask, toggleComplete, removeTodo}) => {
     )
 }
 
-export default TaskList;
+export default TodoList;
