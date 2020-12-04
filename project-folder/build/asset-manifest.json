@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e48e7a7.chunk.css",
-    "main.js": "/static/js/main.333a290b.chunk.js",
-    "main.js.map": "/static/js/main.333a290b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5f3f3b45.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5f3f3b45.js.map",
-    "static/js/2.b4ffea2c.chunk.js": "/static/js/2.b4ffea2c.chunk.js",
-    "static/js/2.b4ffea2c.chunk.js.map": "/static/js/2.b4ffea2c.chunk.js.map",
-    "static/js/3.624087bf.chunk.js": "/static/js/3.624087bf.chunk.js",
-    "static/js/3.624087bf.chunk.js.map": "/static/js/3.624087bf.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.4e48e7a7.chunk.css.map": "/static/css/main.4e48e7a7.chunk.css.map",
-    "static/js/2.b4ffea2c.chunk.js.LICENSE.txt": "/static/js/2.b4ffea2c.chunk.js.LICENSE.txt"
+    "main.css": "/ToDoing-React-App/project-folder/build/static/css/main.31618ddf.chunk.css",
+    "main.js": "/ToDoing-React-App/project-folder/build/static/js/main.cfed4155.chunk.js",
+    "main.js.map": "/ToDoing-React-App/project-folder/build/static/js/main.cfed4155.chunk.js.map",
+    "runtime-main.js": "/ToDoing-React-App/project-folder/build/static/js/runtime-main.a6fdaea3.js",
+    "runtime-main.js.map": "/ToDoing-React-App/project-folder/build/static/js/runtime-main.a6fdaea3.js.map",
+    "static/js/2.b4ffea2c.chunk.js": "/ToDoing-React-App/project-folder/build/static/js/2.b4ffea2c.chunk.js",
+    "static/js/2.b4ffea2c.chunk.js.map": "/ToDoing-React-App/project-folder/build/static/js/2.b4ffea2c.chunk.js.map",
+    "static/js/3.624087bf.chunk.js": "/ToDoing-React-App/project-folder/build/static/js/3.624087bf.chunk.js",
+    "static/js/3.624087bf.chunk.js.map": "/ToDoing-React-App/project-folder/build/static/js/3.624087bf.chunk.js.map",
+    "index.html": "/ToDoing-React-App/project-folder/build/index.html",
+    "static/css/main.31618ddf.chunk.css.map": "/ToDoing-React-App/project-folder/build/static/css/main.31618ddf.chunk.css.map",
+    "static/js/2.b4ffea2c.chunk.js.LICENSE.txt": "/ToDoing-React-App/project-folder/build/static/js/2.b4ffea2c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5f3f3b45.js",
+    "static/js/runtime-main.a6fdaea3.js",
     "static/js/2.b4ffea2c.chunk.js",
-    "static/css/main.4e48e7a7.chunk.css",
-    "static/js/main.333a290b.chunk.js"
+    "static/css/main.31618ddf.chunk.css",
+    "static/js/main.cfed4155.chunk.js"
   ]
 }
