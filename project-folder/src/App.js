@@ -10,11 +10,11 @@ const initProjects = [{ id: "b1", project: "inbox", completable: false }];
 
 const App = () => {
 
-  const clearing = () => {
-    localStorage.setItem(LOCAL_STORAGE_TASKS, JSON.stringify([]));
-    localStorage.setItem(LOCAL_STORAGE_PROJECTS, JSON.stringify(initProjects));
-    console.log('clearing');
-  }
+  // const clearing = () => {
+  //   localStorage.setItem(LOCAL_STORAGE_TASKS, JSON.stringify([]));
+  //   localStorage.setItem(LOCAL_STORAGE_PROJECTS, JSON.stringify(initProjects));
+  //   console.log('clearing');
+  // }
 
 
   const [curFolder, setFolder] = useState(initFolder);
@@ -89,7 +89,7 @@ const App = () => {
       <header className="bigtext">
         <div>ToDoing by Michael Riccio</div>
       </header>
-      <button className="clearing" onClick={clearing} type='button'>X</button>
+      {/* <button className="clearing" onClick={clearing} type='button'>X</button> */}
       <div className="center">
         <Projects addProj={addProj} curProject={curProject} setProject={setProject} nowFolder={nowFolder} removeProject={removeProject} />
         <Todo addTodo={addTodo}  curTask={curTask} curProject={curProject} curFolder={curFolder} toggleComplete={toggleComplete} removeTodo={removeTodo}/>
