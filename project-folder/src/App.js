@@ -34,10 +34,6 @@ const App = () => {
     localStorage.setItem(LOCAL_STORAGE_TASKS, JSON.stringify(curTask));
   }, [curTask]);
 
-  function lsSetItem(name, data) { 
-    localStorage.setItem(name, JSON.stringify(data));
-  }
-
   //Retrieves projects from local storage on load
   useEffect(() => {
     const storageProjects = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECTS));
