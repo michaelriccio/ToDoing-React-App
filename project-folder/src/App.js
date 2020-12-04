@@ -86,13 +86,17 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="bigtext">ToDoing by Michael Riccio</header>
+      <header className="bigtext">
+        <div>ToDoing by Michael Riccio</div>
+      </header>
       <button className="clearing" onClick={clearing} type='button'>X</button>
       <div className="center">
         <Projects addProj={addProj} curProject={curProject} setProject={setProject} nowFolder={nowFolder} removeProject={removeProject} />
         <Todo addTodo={addTodo}  curTask={curTask} curProject={curProject} curFolder={curFolder} toggleComplete={toggleComplete} removeTodo={removeTodo}/>
       </div>
-      <footer className="bigtext">Made with HTML/CSS/JS/REACT</footer>
+      <footer className="bigtext">
+        <div>© Michael Riccio 2020</div>
+      </footer>
     </div>
   )
 }

@@ -1,23 +1,27 @@
 html{
+    --blood:#570000;
     --red:#910000;
     --burnt:#A63C06;
     --orange:#C36F09;
     --tan:#ebc444;
     --yellow:#fff890;
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
     --headText: 'Montserrat', sans-serif;
-    --bodyText: ''
+    --mainWeight: 500;
+    --listWeight: 300;
 }
 
 header{
-    font-size: 50px;
     height: 60px;
-    position: fixed;
-    top: 0;
     border-bottom: .2rem var(--burnt) solid;
-    padding-left: 10vw;
     background-color: var(--yellow);
-    color: var(--red);
+    div{
+        position: absolute;
+        top: -3px;
+        font-size: 50px;
+        padding-left: 10vw;
+        color: var(--red);
+    }
 }
 
 .center{
@@ -33,6 +37,46 @@ header{
         position: relative;
         padding-top: 60px;
         min-width: 300px;
+        padding-left: 2rem;
+        .projectAdd{
+            background-color: transparent;
+            border: solid var(--burnt) 2px;
+            color:var(--burnt);
+            &:hover{
+                color: var(--blood);
+                background-color: var(--burnt);
+            }
+        }
+        .projectItem{
+            background-color: var(--orange);
+            display: flex;
+            border-radius: 1rem;
+            padding-left: 1rem;
+            justify-content: space-between;
+            transition: background-color .3s ease-out;
+            cursor: pointer;
+            &:hover{
+                background-color: #e78916;
+            }
+            .list{
+                padding: .2rem;
+                font-weight: 700;
+                width: 100%;
+            }
+            .ex{
+                background-color: var(--red);
+                border: none;
+                border-radius: 1rem;
+                font-size: 1rem;
+                color: var(--tan);
+                font-weight: var(--mainWeight);
+                font-family: var(--headText);
+                cursor: pointer;
+                &:hover{
+                    background-color: var(--burnt);
+                }
+            }
+        }
     }
     .tasks{
         grid-area: tasks;
@@ -40,6 +84,79 @@ header{
         position: relative;
         padding-top: 60px;
         padding-left: 60px;
+        .taskHeader{
+            color: var(--burnt);
+        }
+        .taskInput{
+            color: var(--red);
+        }
+        .taskAdd{
+            background-color: transparent;
+            border: solid var(--orange) 2px;
+            color:var(--orange);
+            &:hover{
+                color: var(--blood);
+                background-color: var(--burnt);
+                border: solid var(--burnt) 2px;
+            }
+        }
+        select{
+            appearance: none;
+            background: var(--orange);
+            border-radius: .7rem;
+            border: var(--orange) 3px solid;
+            font-family: var(--headText);
+            font-size: 1.3rem;
+            font-weight: var(--mainWeight);
+            margin: 5px;
+            transition-duration: .3s;
+            color: var(--yellow);
+            text-align: center;
+            transition-property: color, border, background-color;
+            transition-timing-function: ease-out;
+            cursor: pointer;
+            &:hover{
+                background-color: var(--burnt);
+                border: var(--burnt) 3px solid;
+            }
+        }
+        .todoItem{
+            background-color: var(--tan);
+            display: flex;
+            border-radius: 1rem;
+            justify-content: space-between;
+            
+            cursor: pointer;
+            .list{
+                padding: .2rem;
+                padding-left: 1rem;
+                font-weight: 600;
+                width: 100%;
+            }
+            .ex{
+                background-color: var(--red);
+                border: none;
+                border-radius: 1rem;
+                font-size: 1rem;
+                color: var(--tan);
+                font-weight: var(--mainWeight);
+                font-family: var(--headText);
+                cursor: pointer;
+                transition: background-color .3s ease-out;
+                &:hover{
+                    background-color: var(--orange);
+                }
+            }
+            .green {
+                background-color: rgb(73, 128, 0);
+            &:hover{
+                background-color:  rgb(103, 182, 0);
+            }
+            &:active{
+                filter:hue-rotate(90deg);
+            }
+            }
+        }
     }
 }
 
@@ -47,23 +164,23 @@ footer{
     background-color: var(--red);
     bottom: 0;
     color: var(--yellow);
-    font-family: var(--headText);
-    font-size: 30px;
-    height: 35px;
-    height: 40px;
-    position:fixed;
-    width: 100%;
-    text-align: right;
+    font-size: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: right;
+    div{
+        margin-right: 1ch;
+        margin-top: 2px;
+    }
 }
 
 .bigtext{
-    
-    display: flex;
-    flex-direction: column;
-    font-family: 'Crimson Text', serif;
-    justify-content: center;
+    font-family: var(--headText);
+    font-weight: 200;
     width: 100%;
     z-index: 9999;
+    position: fixed;
+
 }
 
 .clearing{
@@ -74,4 +191,37 @@ footer{
 .listItem{
     display: flex;
     margin: 1rem;
+}
+
+.header{
+    font-family: var(--headText);
+    font-weight: var(--mainWeight);
+    color: var(--blood);
+}
+
+.form{
+    background: transparent;
+    border: none;
+    border-bottom: solid var(--burnt) 2px;
+    color: var(--red);
+    padding-left: .5rem;
+    font-size: 18px;
+    margin-left: .5rem;
+}
+
+.listItem{
+    color: var(--blood);
+    margin-left: 2.5rem;
+}
+
+.taskButton{
+    margin-left: 5px;
+    border-radius: .7rem;
+    font-weight: var(--mainWeight);
+    font-family: var(--headText);
+    font-size: 1.5rem;
+    transition-property: color, background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+    cursor: pointer;
 }

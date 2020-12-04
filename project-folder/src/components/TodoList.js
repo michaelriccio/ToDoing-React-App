@@ -7,11 +7,11 @@ const TodoList = ({curTask, toggleComplete, removeTodo}) => {
     const handleDelete = () => removeTodo(curTask.id);
 
     return (
-    <div className="listItem">
-        <div style={{textDecoration: curTask.completed ? "line-through" : null}}> {curTask.task}</div>
-        <button onClick={handleCheckbox} type="checkbox">√</button>
-        <button onClick={handleDelete} type="button">X</button>
-    </div>
+        <div className="listItem todoItem">
+            <button className="ex green" onClick={handleCheckbox} type="checkbox">✓</button>
+            <div className="list" style={{textDecoration: curTask.completed ? "line-through" : null}}> {curTask.task}</div>
+            <button className="ex " onClick={handleDelete} type="button">X</button>
+        </div>
     )
 }
 

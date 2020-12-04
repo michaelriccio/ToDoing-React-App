@@ -1,23 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 html {
+  --blood:#570000;
   --red:#910000;
   --burnt:#A63C06;
   --orange:#C36F09;
   --tan:#ebc444;
   --yellow:#fff890;
   --headText: 'Montserrat', sans-serif;
-  --bodyText: ''
-;
+  --mainWeight: 500;
+  --listWeight: 300;
 }
 
 header {
-  font-size: 50px;
   height: 60px;
-  position: fixed;
-  top: 0;
   border-bottom: 0.2rem var(--burnt) solid;
-  padding-left: 10vw;
   background-color: var(--yellow);
+}
+
+header div {
+  position: absolute;
+  top: -3px;
+  font-size: 50px;
+  padding-left: 10vw;
   color: var(--red);
 }
 
@@ -40,6 +44,58 @@ header {
   position: relative;
   padding-top: 60px;
   min-width: 300px;
+  padding-left: 2rem;
+}
+
+.center .projects .projectAdd {
+  background-color: transparent;
+  border: solid var(--burnt) 2px;
+  color: var(--burnt);
+}
+
+.center .projects .projectAdd:hover {
+  color: var(--blood);
+  background-color: var(--burnt);
+}
+
+.center .projects .projectItem {
+  background-color: var(--orange);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+  cursor: pointer;
+}
+
+.center .projects .projectItem:hover {
+  background-color: #e78916;
+}
+
+.center .projects .projectItem .list {
+  padding: .2rem;
+  font-weight: 700;
+  width: 100%;
+}
+
+.center .projects .projectItem .ex {
+  background-color: var(--red);
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--tan);
+  font-weight: var(--mainWeight);
+  font-family: var(--headText);
+  cursor: pointer;
+}
+
+.center .projects .projectItem .ex:hover {
+  background-color: var(--burnt);
 }
 
 .center .tasks {
@@ -53,33 +109,127 @@ header {
   padding-left: 60px;
 }
 
+.center .tasks .taskHeader {
+  color: var(--burnt);
+}
+
+.center .tasks .taskInput {
+  color: var(--red);
+}
+
+.center .tasks .taskAdd {
+  background-color: transparent;
+  border: solid var(--orange) 2px;
+  color: var(--orange);
+}
+
+.center .tasks .taskAdd:hover {
+  color: var(--blood);
+  background-color: var(--burnt);
+  border: solid var(--burnt) 2px;
+}
+
+.center .tasks select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: var(--orange);
+  border-radius: .7rem;
+  border: var(--orange) 3px solid;
+  font-family: var(--headText);
+  font-size: 1.3rem;
+  font-weight: var(--mainWeight);
+  margin: 5px;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  color: var(--yellow);
+  text-align: center;
+  -webkit-transition-property: color, border, background-color;
+  transition-property: color, border, background-color;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  cursor: pointer;
+}
+
+.center .tasks select:hover {
+  background-color: var(--burnt);
+  border: var(--burnt) 3px solid;
+}
+
+.center .tasks .todoItem {
+  background-color: var(--tan);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.center .tasks .todoItem .list {
+  padding: .2rem;
+  padding-left: 1rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.center .tasks .todoItem .ex {
+  background-color: var(--red);
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--tan);
+  font-weight: var(--mainWeight);
+  font-family: var(--headText);
+  cursor: pointer;
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+}
+
+.center .tasks .todoItem .ex:hover {
+  background-color: var(--orange);
+}
+
+.center .tasks .todoItem .green {
+  background-color: #498000;
+}
+
+.center .tasks .todoItem .green:hover {
+  background-color: #67b600;
+}
+
+.center .tasks .todoItem .green:active {
+  -webkit-filter: hue-rotate(90deg);
+          filter: hue-rotate(90deg);
+}
+
 footer {
   background-color: var(--red);
   bottom: 0;
   color: var(--yellow);
-  font-family: var(--headText);
-  font-size: 30px;
-  height: 35px;
-  height: 40px;
-  position: fixed;
-  width: 100%;
-  text-align: right;
-}
-
-.bigtext {
+  font-size: 20px;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-family: 'Crimson Text', serif;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+footer div {
+  margin-right: 1ch;
+  margin-top: 2px;
+}
+
+.bigtext {
+  font-family: var(--headText);
+  font-weight: 200;
   width: 100%;
   z-index: 9999;
+  position: fixed;
 }
 
 .clearing {
@@ -92,5 +242,41 @@ footer {
   display: -ms-flexbox;
   display: flex;
   margin: 1rem;
+}
+
+.header {
+  font-family: var(--headText);
+  font-weight: var(--mainWeight);
+  color: var(--blood);
+}
+
+.form {
+  background: transparent;
+  border: none;
+  border-bottom: solid var(--burnt) 2px;
+  color: var(--red);
+  padding-left: .5rem;
+  font-size: 18px;
+  margin-left: .5rem;
+}
+
+.listItem {
+  color: var(--blood);
+  margin-left: 2.5rem;
+}
+
+.taskButton {
+  margin-left: 5px;
+  border-radius: .7rem;
+  font-weight: var(--mainWeight);
+  font-family: var(--headText);
+  font-size: 1.5rem;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

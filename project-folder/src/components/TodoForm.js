@@ -37,13 +37,13 @@ const TodoForm = ({addTodo, curProject}) => {
                 type="text"
                 value={todo.task}
                 onChange={handleTaskInputChange}
-                className="taskInput" 
+                className="taskInput form" 
                 placeholder="Enter task here"
                 />
-                <select onChange={handleSelect}>
+                <select onChange={handleSelect} onF>
                     {projectList}
                 </select>
-                <button type="submit" className="taskButton">+</button>
+                <button type="submit" className="taskButton taskAdd">+</button>
             </form>
         </div>
     )

@@ -10,7 +10,7 @@ const Todo = ({addTodo, curTask, curProject, curFolder, toggleComplete, removeTo
 
     return(
         <div className="tasks">
-            <h1> {curFolder} </h1>
+            <h1 className="header taskHeader"> {curFolder} </h1>
             <TodoForm addTodo={addTodo} curProject={curProject}/>
             {includedTodos}  
         </div>

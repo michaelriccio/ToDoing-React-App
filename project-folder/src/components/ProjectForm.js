@@ -31,10 +31,10 @@ const ProjectForm = ({addProj, curProject}) => {
                 type="text"
                 value={proj.project}
                 onChange={handleTaskInputChange}
-                className="taskInput" 
+                className="projectInput form" 
                 placeholder="Enter task here"
                 />
-                <button type="submit" className="taskButton">
+                <button type="submit" className="taskButton projectAdd">
                 +
                 </button>
             </form>

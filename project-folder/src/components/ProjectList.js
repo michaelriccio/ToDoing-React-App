@@ -12,14 +12,14 @@ const ProjectList = ({curProject, setProject, nowFolder, removeProject}) => {
 
     let button;
     if (curProject.completable === true) {
-        button = <button onClick={deleteProject} type="button"> X </button>
+        button = <button className="ex" onClick={deleteProject} type="button"> X </button>
     }
     else {
-        button = null
+        button = null;
     };
 
-    return <div className="listItem">
-        <div onClick={handleClick} > {curProject.project} </div>
+    return <div className="listItem projectItem">
+        <div className="list" onClick={handleClick}> {curProject.project} </div>
         {button}
     </div>
 }
