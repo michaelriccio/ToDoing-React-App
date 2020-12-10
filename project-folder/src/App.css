@@ -26,19 +26,15 @@ header div {
 }
 
 .center {
-  display: -ms-grid;
   display: grid;
   gap: .2rem;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-areas: "projects tasks tasks tasks tasks";
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "projects tasks tasks tasks tasks";
   height: 100vh;
   background-color: var(--burnt);
 }
 
 .center .projects {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: projects;
   background-color: var(--tan);
   position: relative;
@@ -60,15 +56,10 @@ header div {
 
 .center .projects .projectItem {
   background-color: var(--orange);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 1rem;
   padding-left: 1rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-transition: background-color .3s ease-out;
+  justify-content: space-between;
   transition: background-color .3s ease-out;
   cursor: pointer;
 }
@@ -99,9 +90,6 @@ header div {
 }
 
 .center .tasks {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
   grid-area: tasks;
   background-color: var(--yellow);
   position: relative;
@@ -131,9 +119,7 @@ header div {
 }
 
 .center .tasks select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background: var(--orange);
   border-radius: .7rem;
   border: var(--orange) 3px solid;
@@ -141,14 +127,11 @@ header div {
   font-size: 1.3rem;
   font-weight: var(--mainWeight);
   margin: 5px;
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
+  transition-duration: .3s;
   color: var(--yellow);
   text-align: center;
-  -webkit-transition-property: color, border, background-color;
   transition-property: color, border, background-color;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
   cursor: pointer;
 }
 
@@ -159,13 +142,9 @@ header div {
 
 .center .tasks .todoItem {
   background-color: var(--tan);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 1rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   max-width: 500px;
   cursor: pointer;
 }
@@ -186,7 +165,6 @@ header div {
   font-weight: var(--mainWeight);
   font-family: var(--headText);
   cursor: pointer;
-  -webkit-transition: background-color .3s ease-out;
   transition: background-color .3s ease-out;
 }
 
@@ -203,8 +181,7 @@ header div {
 }
 
 .center .tasks .todoItem .green:active {
-  -webkit-filter: hue-rotate(90deg);
-          filter: hue-rotate(90deg);
+  filter: hue-rotate(90deg);
 }
 
 footer {
@@ -213,12 +190,8 @@ footer {
   color: var(--yellow);
   font-size: 20px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  justify-content: right;
 }
 
 footer div {
@@ -240,8 +213,6 @@ footer div {
 }
 
 .listItem {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 1rem;
 }
@@ -273,12 +244,9 @@ footer div {
   font-weight: var(--mainWeight);
   font-family: var(--headText);
   font-size: 1.5rem;
-  -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
+  transition-duration: .3s;
+  transition-timing-function: ease-out;
   cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */
